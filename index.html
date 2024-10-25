@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockCie</title>
+    <title>Stock-See</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" 
     integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous">
@@ -12,104 +12,30 @@
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    
-    
-    
-    
-    <!-- navigation bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" > <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
-            </svg><span style="color: aqua;">  Stock</span>Cie</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Buy</a></li>
-                            <li><a class="dropdown-item" href="#">Sell</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Stock Analysis</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-     
+       
     <!-- container -->
     <div class="container">
         <header>
-            <h1>Stock Analysis Platform</h1>
-            <p>Analyze, buy, and sell stocks</p>
+            <h1>Stock-See</h1>
+            <p>Analyze stocks</p>
         </header>
 
         <!-- Search Section -->
-        <section class="search-section">
+        <section class="search-section" style="position: relative; padding: 20px;">
             <h2>Search for a Stock</h2>
-            <input type="text" id="stock-search" placeholder="Enter Stock Symbol (e.g. AAPL, TSLA)">
+            <input type="text" id="stock-search" placeholder="Enter Stock Symbol (e.g.Tata)">
             <button id="search-btn">Search</button>
+            
+            <!-- Dropdown List for Suggestions -->
+            <ul class="dropdown-list" id="dropdown-list"></ul>
         </section>
-
-        <!-- Ownership Check Section -->
-        <section class="ownership-check-section">
-            <h2>Check Stock Ownership</h2>
-            <label for="ownership-check">Do you already own this stock?</label>
-            <select id="ownership-check">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
-        </section>
-
-        <section class="trade-section">
-            <h2>Trade Stocks</h2>
-        
-            <!-- Buy Stock Section -->
-            <div class="buy-stock">
-                <h3>Buy Stock</h3>
-                <label for="buy-quantity">Quantity:</label>
-                <input type="number" id="buy-quantity" placeholder="Enter quantity">
-                
-                <label for="buy-price">Price per Stock:</label>
-                <input type="number" id="buy-price" placeholder="Enter price per stock">
-        
-                <button id="buy-btn">Buy Stock</button>
-            </div>
-        
-            <!-- Sell Stock Section -->
-            <div class="sell-stock">
-                <h3>Sell Stock</h3>
-                <label for="sell-quantity">Quantity:</label>
-                <input type="number" id="sell-quantity" placeholder="Enter quantity" disabled>
-                
-                <label for="sell-price">Price per Stock:</label>
-                <input type="number" id="sell-price" placeholder="Enter price per stock" disabled>
-        
-                <button id="sell-btn" disabled >Sell Stock</button>
-            </div>
-        </section>
-        <!-- Time Frame Section -->
         <section class="timeframe-section">
             <h2>Choose Analysis Timeframe</h2>
             <label for="start-date">Start Date:</label>
@@ -118,10 +44,6 @@
             <label for="end-date">End Date:</label>
             <input type="date" id="end-date">
         </section>
-
-        
-
-        <!-- Analyze Section -->
         <section class="analyze-section">
             <button id="analyze-btn">Analyze Stock</button>
         </section>
@@ -133,50 +55,28 @@
                 <!-- Results will be displayed here -->
             </div>
         </section>
-    </div>
-
-
-
-
 <!-- footer section -->
 
 <!-- footer -->
 <div class="footer">
     <div class="footer-content">
         <div class="footer-section about">
-            <h1 class="logo-text"><span>Stock</span>Cie</h1>
+            <h1 class="logo-text"><span>Stock-</span>See</h1>
             <p>
                 This is a website help to find the best stock to buy or sell.
             </p>
             <div class="contact">
                 <span><i class="fa fa-phone"></i> &nbsp; 123-456-789</span>
-                <span><i class="fa fa-envelope"></i> &nbsp; group4@nitt.gmail.com</span>
+                <span><i class="fa fa-envelope"></i> &nbsp; Stocksee@nitt.gmail.com</span>
             </div>
-            <div class="socials">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-            </div>
+            
         </div>
         <div class="footer-section links">
             <h2>Quick links</h2>
             <br>
             <ul>
                 <a href="#">
-                    <li>Events</li>
-                </a>
-                <a href="#">
                     <li>Team</li>
-                </a>
-                <a href="#">
-                    <li>Mentores</li>
-                </a>
-                <a href="#">
-                    <li>Gallery</li>
-                </a>
-                <a href="#">
-                    <li>Terms and conditions</li>
                 </a>
             </ul>
         </div>
@@ -194,7 +94,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy;group4@nitt.gmail.com | Designed by group4
+        &copy;Stocksee@nitt.gmail.com | Designed by group4
     </div>
 </div>
     <script src="script.js"></script>
