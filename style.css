@@ -1,7 +1,4 @@
-.logo-text{
-    text-align: center;
-    background-color: azure;
-}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +12,10 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: #3eedf3;
+    max-width: 1250px;
+    
+    margin: 0px;
     padding: 20px;
 }
 
@@ -73,6 +72,46 @@ button {
     transition: background-color 0.3s ease;
     margin-top: 10px;
 }
+button:hover {
+    background-color: rgb(2, 65, 2);
+}
+
+
+ /* Dropdown Styling */
+ 
+ .dropdown-list {
+    position: absolute;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.dropdown-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-list li:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(29, 119, 29);
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
 
 button:hover {
     background-color: rgb(2, 65, 2);
@@ -103,12 +142,12 @@ button:hover {
     width: 48%;
 }
 
-/* #analyze-btn{
+#analyze-btn{
     background-color: #4b75cf;
 }
 #analyze-btn :hover{
     background-color:#2980b9;
-} */
+}
 
 
 .footer{
@@ -134,17 +173,7 @@ button:hover {
 .footer .footer-content .about h1 span{
     color: #3eedf3;
 }
-.footer .footer-content .about .socials a{
-    border: 1px solid grey;
-    width: 45px;
-    height: 41px;
-    padding-top: 5px;
-    margin-right: 5px;
-    text-align: center;
-    display: inline-block;
-    font-size: 1.3em;
-    border-radius: 5px;
-}
+
 .footer .footer-content .about .socials a:hover{
     border:1px solid white ;
     color: white;
@@ -176,8 +205,8 @@ button:hover {
     transition: all .3s;
 }
 .footer .footer-bottom{
-    background: #303036;
-    color: #444;
+    background: #57575d;
+    color: #757272;
     height: 50px;
     width: 100%;
     text-align: center;
@@ -185,4 +214,4 @@ button:hover {
     bottom: 0px;
     left: 0px;
     padding-top: 20px;
-}
+} */
